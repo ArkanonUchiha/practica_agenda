@@ -13,3 +13,16 @@
   bottom: 0;
   left: 0;
 }
+
+.block-overflow {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.block-overflow--address {
+  height: 45vh;
+}
+
+.block-overflow--phone {
+  height: 40vh;
+}
