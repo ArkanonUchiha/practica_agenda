@@ -48,9 +48,12 @@ class Contacto(models.Model):
     fotografia = models.ImageField()
     fecha_nacio = models.DateField(default=None, null=True, blank=True)
 
+    def __str__(self):
+        return self.nombre, self.apellidos
+
     class Meta:
-        verbose_name = "Contato"
-        verbose_name_plural = "Contatos"
+        verbose_name = "Contacto"
+        verbose_name_plural = "Contactos"
     
 
 class Direccion(models.Model):
@@ -63,6 +66,9 @@ class Direccion(models.Model):
     estado = models.CharField(max_length=3, choices=ESTADOS)
     referencias = models.TextField()
 
+    def __str__(self):
+        return self.contacto.nombre, self.calle
+
     class Meta:
         verbose_name = "Dirección"
         verbose_name_plural = "Direcciones"
@@ -73,6 +79,9 @@ class Telefono(models.Model):
     tipo = models.IntegerField(choices=TIPOS_TELEFONO)
     alias = models.CharField(max_length=255)
     numero = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.contacto.nombre, self.numero
 
     class Meta:
         verbose_name = "Teléfono"

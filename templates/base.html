@@ -1,18 +1,189 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="es-mx">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{titulo}}</title>
 
-    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
-</head>
-<body>
-    
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  </head>
+
+  <body>
+    <div class="main">
+      <nav class="navbar bg-dark text-white">
+        <span class="navbar-brand mb-0 h1">Navbar</span>
+      </nav>
+
+      <div class="row p-0 m-0">
+        <div class="col-12 p-3 m-0 d-flex justify-content-end">
+          <a class="btn btn-primary" href="#" role="button">Agregar contacto</a>
+        </div>
+
+        <div class="col-12 row p-0 m-0 justify-content-center">
+          <form class="form-container border rounded col-11 col-lg-6 p-0">
+            <div class="form__body py-3 px-4">
+
+              <!-- <div>
+                <div class="form-group">
+                  <label for="InputNombres">Nombres*</label>
+                  <input type="text" class="form-control" id="InputNombres">
+                </div>
+              
+                <div class="form-group">
+                  <label for="InputApellidos">Apellidos*</label>
+                  <input type="text" class="form-control" id="InputApellidos">
+                </div>
+              
+                <div class="form-group">
+                  <label for="InputNombres">Fotografia*</label>
+              
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="customFile">
+                    <label class="custom-file-label" for="customFile">---</label>
+                  </div>
+                </div>
+              
+                <div class="form-group">
+                  <label for="InputApellidos">Fecha de nacimiento</label>
+                  <input id="datepicker" />
+                </div>
+              </div> -->
+
+
+              <div class="">
+                <nav>
+                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-link active" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="true">Contacto</a>
+                    <a class="nav-link" id="nav-address-tab" data-toggle="tab" href="#nav-address" role="tab" aria-controls="nav-address" aria-selected="false">Direccion</a>
+                    <a class="nav-link" id="nav-phone-tab" data-toggle="tab" href="#nav-phone" role="tab" aria-controls="nav-phone" aria-selected="false">Telefono</a>
+                  </div>
+                </nav>
+
+                <div class="tab-content" id="nav-tabContent">
+                  <div class="tab-pane fade show active" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+
+                  <div class="tab-pane fade" id="nav-address" role="tabpanel" aria-labelledby="nav-address-tab">...</div>
+
+                  <div class="tab-pane fade" id="nav-phone" role="tphone" aria-labelledby="nav-phone-tab">
+                    <div class="row p-0 m-0">
+                      <div class="col-12 px-0 py-0 pt-3 m-0 d-flex justify-content-end">
+                        <a class="btn btn-primary" href="#" role="button">Agregar telefono</a>
+                      </div>
+                    </div>
+
+                    <div class="row p-0 m-0">
+                      <div class="form-row">
+                        <div class="form-group col-12 col-md-3">
+                          <label for="inlineFormCustomSelect">Tipo*</label>
+                          <select class="custom-select mr-5" id="inlineFormCustomSelect">
+                            <option selected>Choose...</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+
+                        <div class="form-group col-12 col-md-3">
+                          <label for="inputAlias">Alias*</label>
+                          <input type="text" class="form-control" id="inputAlias">
+                        </div>
+
+                        <div class="form-group col-12 col-md-3">
+                          <label for="inputPhone">Numero*</label>
+                          <input type="text" class="form-control" id="inputPhone">
+                        </div>
+
+                        <div class="form-group col-12 col-md-3 d-flex align-items-end justify-content-center">
+                          <a class="btn btn-outline-danger col-8" href="#" role="button">Cancelar</a>
+                        </div>
+                      </div>
+
+                      <div class="form-row">
+                        <div class="form-group col-12 col-md-3">
+                          <label for="inlineFormCustomSelect">Tipo*</label>
+                          <select class="custom-select mr-5" id="inlineFormCustomSelect">
+                            <option selected>Choose...</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+
+                        <div class="form-group col-12 col-md-3">
+                          <label for="inputAlias">Alias*</label>
+                          <input type="text" class="form-control" id="inputAlias">
+                        </div>
+
+                        <div class="form-group col-12 col-md-3">
+                          <label for="inputPhone">Numero*</label>
+                          <input type="text" class="form-control" id="inputPhone">
+                        </div>
+
+                        <div class="form-group col-12 col-md-3 d-flex align-items-end justify-content-center">
+                          <a class="btn btn-outline-danger col-8" href="#" role="button">Cancelar</a>
+                        </div>
+                      </div>
+
+                      <div class="form-row">
+                        <div class="form-group col-12 col-md-3">
+                          <label for="inlineFormCustomSelect">Tipo*</label>
+                          <select class="custom-select mr-5" id="inlineFormCustomSelect">
+                            <option selected>Choose...</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+
+                        <div class="form-group col-12 col-md-3">
+                          <label for="inputAlias">Alias*</label>
+                          <input type="text" class="form-control" id="inputAlias">
+                        </div>
+
+                        <div class="form-group col-12 col-md-3">
+                          <label for="inputPhone">Numero*</label>
+                          <input type="text" class="form-control" id="inputPhone">
+                        </div>
+
+                        <div class="form-group col-12 col-md-3 d-flex align-items-end justify-content-center">
+                          <a class="btn btn-outline-danger col-8" href="#" role="button">Cancelar</a>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+
+            <div class="form__footer py-3 px-4 bg-light">
+              <!-- <div class="form__footer__block1 d-flex justify-content-end align-items-center">
+                <button type="submit" class="btn btn-outline-danger mr-1">Cancelar</button>
+                <button type="submit" class="btn btn-primary ml-1">Crear Contacto</button>
+              </div> -->
+
+              <div class="form__footer__block2 d-flex justify-content-end align-items-center">
+                <button type="submit" class="btn btn-outline-secondary mr-1">Regresar</button>
+                <button type="submit" class="btn btn-success ml-1">Actualizar Contacto</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="py-3 bar bar--footer position-absolute bg-light"></div>
+    </div>
+
     <script src="{% static 'jquery/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'prueba/gijgo.min.js' %}"></script>
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
-</body>
+    <script src="{% static 'js/index.js' %}"></script>
+  </body>
 </html>

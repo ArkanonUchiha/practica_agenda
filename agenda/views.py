@@ -7,7 +7,7 @@ def inicio(request):
     template = get_template("base.html")
 
     context = {
-        "titulo": "Inicio"
+        "titulo": "Home"
     }
 
     return HttpResponse(template.render(context), request)
