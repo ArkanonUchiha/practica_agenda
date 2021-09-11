@@ -1,0 +1,280 @@
+<body>
+  <div class="main">
+    <nav class="navbar bg-dark text-white">
+      {% block title_agenda_contacto %}
+        <span class="navbar-brand mb-0 h1">Agenda - Contactos</span>
+      {% endblock title_agenda_contacto %}
+
+      <!-- {% block title_agenda_nuevo %}
+      <span class="navbar-brand mb-0 h1">Agenda - Nuevo</span>
+      {% endblock title_agenda_nuevo %}
+
+      {% block title_agenda_editar %}
+      <span class="navbar-brand mb-0 h1">Agenda - Editar</span>
+      {% endblock title_agenda_editar %} -->
+    </nav>
+
+
+
+    {% block btn_agregar_contacto %}
+    <div class="row p-0 m-0">
+      <div class="block-addItem col-12 pt-4">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-12 col-12 col-lg-6 m-0 d-flex justify-content-end pr-3 pr-sm-4 pr-lg-0">
+            <a class="btn btn-primary mr-md-2 mr-lg-0" href="#" role="button">Agregar contacto</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock btn_agregar_contacto %}
+
+
+
+    {% block form_agregar_contacto %}
+    <div class="row p-0 m-0">
+      <div class="col-12 row p-0 pt-4 m-0 justify-content-center">
+        <form class="form-container border rounded col-11 col-lg-6 p-0">
+          <div class="form__body py-3 px-4">
+            <div class="">
+              <div class="row p-0 m-0">
+                <div class="col-12 p-0 m-0">
+                  <div class="row p-0 m-0">
+                    <div class="form-group col-12 p-0">
+                      <label for="InputNombres">Nombres*</label>
+                      <input type="text" class="form-control" id="InputNombres">
+                    </div>
+              
+                    <div class="form-group col-12 p-0">
+                      <label for="InputApellidos">Apellidos*</label>
+                      <input type="text" class="form-control" id="InputApellidos">
+                    </div>
+              
+                    <div class="form-group col-12 p-0">
+                      <label for="InputNombres">Fotografia*</label>
+              
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFile">
+                        <label class="custom-file-label" for="customFile">---</label>
+                      </div>
+                    </div>
+              
+                    <div class="form-group col-12 p-0">
+                      <label for="InputApellidos">Fecha de nacimiento</label>
+                      <input id="datepicker" class="datepickerNew" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="form__footer py-3 px-4 bg-light">
+            <div class="form__footer__block1 d-flex justify-content-end align-items-center">
+              <button type="submit" class="btn btn-outline-danger mr-1">Cancelar</button>
+              <button type="submit" class="btn btn-primary ml-1">Crear Contacto</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    {% endblock form_agregar_contacto %}
+
+
+
+    {% block form_editar_contacto %}
+    <div class="row p-0 m-0">
+      <div class="col-12 row p-0 pt-4 m-0 justify-content-center">
+        <form class="form-container border rounded col-11 col-lg-6 p-0">
+          <div class="form__body py-3 px-4">
+            <div class="">
+              <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <a class="nav-link active" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="true">Contacto</a>
+                  <a class="nav-link" id="nav-address-tab" data-toggle="tab" href="#nav-address" role="tab" aria-controls="nav-address" aria-selected="false">Direccion</a>
+                  <a class="nav-link" id="nav-phone-tab" data-toggle="tab" href="#nav-phone" role="tab" aria-controls="nav-phone" aria-selected="false">Telefonos</a>
+                </div>
+              </nav>
+
+              <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                  <div class="row p-0 m-0 block-overflow block-overflow--contact">
+                    <div class="form-row col-12 px-0 py-0 pt-3 m-0">
+                      <div class="form-group col-12 col-md-6">
+                        <label for="inputStreet">Nombres*</label>
+                        <input type="text" class="form-control" id="inputStreet">
+                      </div>
+
+                      <div class="form-group col-12 col-md-6">
+                        <label for="inputNumExt">Apellidos*</label>
+                        <input type="text" class="form-control" id="inputNumExt">
+                      </div>
+
+                      <div class="form-group col-12">
+                        <label for="InputNombres">Fotografia*</label>
+
+                        <fieldset class="block-disabled row col-12 m-0 mb-1 p-0 flex-row-reverse" disabled>
+                          <label for="disabledTextInput" class="col-3 d-flex align-items-center justify-content-center p-0 m-0">Actualmente</label>
+                          <input type="text" id="disabledTextInput" class="form-control col-9 disabledTextInput border-0" placeholder="Disabled input">
+                        </fieldset>
+
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="customFile">
+                          <label class="custom-file-label" for="customFile">---</label>
+                        </div>
+                      </div>
+
+                      <div class="form-group col-12">
+                        <label for="InputApellidos">Fecha de nacimiento</label>
+                        <input id="datepicker" class="datepickerEdit" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-pane fade" id="nav-address" role="tabpanel" aria-labelledby="nav-address-tab">
+                  <div class="row p-0 m-0 block-overflow block-overflow--address">
+                      <div class="form-row col-12 px-0 py-0 pt-3 m-0">
+                        <div class="form-group col-12 col-md-4">
+                          <label for="inputStreet">Calle*</label>
+                          <input type="text" class="form-control" id="inputStreet">
+                        </div>
+
+                        <div class="form-group col-6 col-md-4">
+                          <label for="inputNumExt">Numero exterior*</label>
+                          <input type="text" class="form-control" id="inputNumExt">
+                        </div>
+
+                      <div class="form-group col-6 col-md-4">
+                        <label for="inputNumInt">Numero interior*</label>
+                        <input type="text" class="form-control" id="inputNumInt">
+                      </div>
+
+                      <div class="form-group col-12 col-sm-4">
+                        <label for="inputCol">Colonia*</label>
+                        <input type="text" class="form-control" id="inputCol">
+                      </div>
+
+                        <div class="form-group col-12 col-sm-4">
+                          <label for="inputMuni">Municipio*</label>
+                          <input type="text" class="form-control" id="inputMuni">
+                        </div>
+
+                        <div class="form-group col-12 col-sm-4">
+                          <label for="inputState">Estado*</label>
+                          <select id="inputState" class="form-control">
+                            <option selected>Choose...</option>
+                            <option>...</option>
+                          </select>
+                        </div>
+
+                        <div class="form-group col-12">
+                          <label for="FormControlRef">Referencias*</label>
+                          <textarea class="form-control" id="FormControlRef" rows="3"></textarea>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+
+                <div class="tab-pane fade" id="nav-phone" role="tphone" aria-labelledby="nav-phone-tab">
+                  <div class="row p-0 m-0">
+                    <div class="col-12 px-0 py-0 pt-3 m-0 d-flex justify-content-end">
+                      <a class="btn btn-primary" href="#" role="button">Agregar telefono</a>
+                    </div>
+                  </div>
+
+                  <div class="row p-0 m-0 mt-2 block-overflow block-overflow--phone">
+                    <div class="form-row col-12 px-0 py-0 pt-3 m-0">
+                      <div class="form-group col-12 col-md-3">
+                        <label for="inlineFormCustomSelect">Tipo*</label>
+                        <select class="custom-select mr-5" id="inlineFormCustomSelect">
+                          <option selected>Choose...</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group col-12 col-md-3">
+                        <label for="inputAlias">Alias*</label>
+                        <input type="text" class="form-control" id="inputAlias">
+                      </div>
+
+                      <div class="form-group col-12 col-md-3">
+                        <label for="inputPhone">Numero*</label>
+                        <input type="text" class="form-control" id="inputPhone">
+                      </div>
+
+                      <div class="form-group col-12 col-md-3 d-flex align-items-end justify-content-center">
+                        <a class="btn btn-outline-danger cancelPhone" href="#" role="button">Cancelar</a>
+                        <a class="btn btn-outline-danger deletePhone" href="#" role="button">Eliminar</a>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form__footer py-3 px-4 bg-light">
+            <div class="form__footer__block2 d-flex justify-content-end align-items-center">
+              <button type="submit" class="btn btn-outline-secondary mr-1">Regresar</button>
+              <button type="submit" class="btn btn-success ml-1">Actualizar Contacto</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    {% endblock form_editar_contacto %}
+
+
+
+    {% block list_contactos_agregados %}
+    <div class="row p-0 m-0">
+      <div class="col-12 row p-0 pt-4 m-0 justify-content-center">
+        <form class="form-container border rounded col-11 col-lg-6 p-0">
+          <div class="form__body py-3 px-4">
+            <div>
+              <div class="row p-0 m-0">
+                <div class="col-12 p-0 m-0">
+                  <div class="row p-0 m-0">
+
+                    {% for contacto in contactos %}
+                    <div class="block-contact form-group col-12 p-0 py-3 m-0 border-bottom d-flex align-items-center justify-content-between">
+                      <div>
+                        <div class="d-flex align-items-center">
+                          <span class="font-weight-bold">{{ contacto.nombre }} {{ contacto.apellidos }}</span>
+                        </div>
+    
+                        <div>
+                          <a class="badge badge-secondary" href="#" role="button">Editar</a>
+                          <a class="badge badge-danger" href="#" role="button">Eliminar</a>
+                        </div>
+                      </div>
+    
+                      <div class="text-dark">
+                        <span>{{ contacto.fecha_nacio }}</span>
+                      </div>
+                    </div>
+                    {% endfor %}
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    {% endblock list_contactos_agregados %}
+
+
+
+    <div class="py-3 bar bar--footer position-fixed bg-light"></div>
+  </div>
+
+  <script src="{% static 'jquery/jquery-3.6.0.min.js' %}"></script>
+  <script src="{% static 'prueba/gijgo.min.js' %}"></script>
+  <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/index.js' %}"></script>
+</body>

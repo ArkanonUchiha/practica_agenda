@@ -49,7 +49,8 @@ class Contacto(models.Model):
     fecha_nacio = models.DateField(default=None, null=True, blank=True)
 
     def __str__(self):
-        return self.nombre, self.apellidos
+        template = '{0.nombre} {0.apellidos}'
+        return template.format(self)
 
     class Meta:
         verbose_name = "Contacto"
@@ -67,7 +68,8 @@ class Direccion(models.Model):
     referencias = models.TextField()
 
     def __str__(self):
-        return self.contacto.nombre, self.calle
+        template = '{0.contacto.nombre} {0.calle}'
+        return template.format(self)
 
     class Meta:
         verbose_name = "Dirección"
@@ -81,7 +83,8 @@ class Telefono(models.Model):
     numero = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.contacto.nombre, self.numero
+        template = '{0.contacto.nombre} {0.numero}'
+        return template.format(self)
 
     class Meta:
         verbose_name = "Teléfono"

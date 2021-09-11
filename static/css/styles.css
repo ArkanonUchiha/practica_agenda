@@ -27,6 +27,28 @@ body {
   height: 45vh;
 }
 
-.block-overflow--phone {
+/* .block-overflow--phone {
   height: 40vh;
+} */
+
+[for="disabledTextInput"] {
+  background-color: #e9ecef;
+}
+
+.disabledTextInput {
+  background-color: transparent !important;
+}
+
+.block-disabled {
+  border: 1px solid #ced4da !important;
+  border-radius: .25rem !important;
+}
+
+.block-contact:first-child {
+  padding-top: 0 !important;
+}
+
+.block-contact:last-child {
+  padding-bottom: 0 !important;
+  border-bottom: none !important;
 }
