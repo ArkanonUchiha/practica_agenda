@@ -23,9 +23,11 @@ body {
   overflow-x: hidden;
 }
 
-.block-overflow--address {
+.block-overflow--address,
+.block-overflow--list {
   height: 45vh;
 }
+
 
 /* .block-overflow--phone {
   height: 40vh;

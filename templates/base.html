@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{titulo}}</title>
+    <title>{% block title %} Inicio {% endblock title %}</title>
 
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" />
@@ -29,7 +29,7 @@
         <div class="block-addItem col-12 pt-4">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-12 col-12 col-lg-6 m-0 d-flex justify-content-end pr-3 pr-sm-4 pr-lg-0">
-              <a class="btn btn-primary mr-md-2 mr-lg-0" href="#" role="button">Agregar contacto</a>
+              <a class="btn btn-primary mr-md-2 mr-lg-0" href="{% url 'createContact' %}" role="button">Agregar contacto</a>
             </div>
           </div>
         </div>
@@ -44,10 +44,15 @@
 
 
       {% block list_contactos_agregados %}
+
+
+
+
+      
       <div class="row p-0 m-0">
         <div class="col-12 row p-0 pt-4 m-0 justify-content-center">
           <form class="form-container border rounded col-11 col-lg-6 p-0">
-            <div class="form__body py-3 px-4">
+            <div class="form__body py-3 px-4 block-overflow block-overflow--list">
               <div>
                 <div class="row p-0 m-0">
                   <div class="col-12 p-0 m-0">
@@ -61,7 +66,7 @@
                           </div>
       
                           <div>
-                            <a class="badge badge-secondary" href="#" role="button">Editar</a>
+                            <a class="badge badge-secondary" href="{% url 'editContact' contacto.nombre %}" role="button">Editar</a>
                             <a class="badge badge-danger" href="#" role="button">Eliminar</a>
                           </div>
                         </div>

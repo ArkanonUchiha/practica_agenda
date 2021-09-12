@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
+{% block title %}
+  Crear Contacto
+{% endblock title %}
+
 {% block title_agenda %}
   <span class="navbar-brand mb-0 h1">Agenda - Nuevo</span>
 {% endblock title_agenda %}
@@ -7,37 +11,41 @@
 {% block btn_agregar_contacto %} {% endblock btn_agregar_contacto %}
 
 {% block cuerpo_acciones %}
+
   <div class="row p-0 m-0">
     <div class="col-12 row p-0 pt-4 m-0 justify-content-center">
-      <form class="form-container border rounded col-11 col-lg-6 p-0">
+      <form class="form-container border rounded col-11 col-lg-6 p-0" enctype="multipart/form-data" method="POST">
+        {% csrf_token %} 
         <div class="form__body py-3 px-4">
           <div class="">
             <div class="row p-0 m-0">
               <div class="col-12 p-0 m-0">
                 <div class="row p-0 m-0">
+
                   <div class="form-group col-12 p-0">
-                    <label for="InputNombres">Nombres*</label>
-                    <input type="text" class="form-control" id="InputNombres">
+                    <label for="id_nombre">Nombre*</label>
+                    <input type="text" name="nombre" maxlength="60" required class="form-control" id="id_nombre">
                   </div>
             
                   <div class="form-group col-12 p-0">
-                    <label for="InputApellidos">Apellidos*</label>
-                    <input type="text" class="form-control" id="InputApellidos">
+                    <label for="id_apellidos">Apellidos*</label>
+                    <input type="text" name="apellidos" maxlength="120" required class="form-control" id="id_apellidos">
                   </div>
-            
+
                   <div class="form-group col-12 p-0">
-                    <label for="InputNombres">Fotografia*</label>
+                    <label for="id_fotografia">Fotografia*</label>
             
                     <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="customFile">
-                      <label class="custom-file-label" for="customFile">---</label>
+                      <input type="file" class="custom-file-input" name="fotografia" accept="image/*" id="id_fotografia">
+                      <label class="custom-file-label" for="id_fotografia">Choose file</label>
                     </div>
                   </div>
-            
+
                   <div class="form-group col-12 p-0">
-                    <label for="InputApellidos">Fecha de nacimiento</label>
-                    <input id="datepicker" class="datepickerNew" />
+                    <label for="id_fecha_nacio">Fecha nacimiento:</label>
+                    <input type="text" name="fecha_nacio" id="id_fecha_nacio" class="datepickerNew">
                   </div>
+
                 </div>
               </div>
             </div>
@@ -46,7 +54,7 @@
 
         <div class="form__footer py-3 px-4 bg-light">
           <div class="form__footer__block1 d-flex justify-content-end align-items-center">
-            <button type="submit" class="btn btn-outline-danger mr-1">Cancelar</button>
+            <a class="btn btn-outline-danger mr-1" href="{% url 'base' %}" role="button">Cancelar</a>
             <button type="submit" class="btn btn-primary ml-1">Crear Contacto</button>
           </div>
         </div>

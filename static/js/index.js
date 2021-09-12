@@ -1,4 +1,4 @@
-$('.datepickerNew, .datepickerEdit').datepicker({
+$('.datepickerNew').datepicker({
   uiLibrary: 'bootstrap4'
 });
 

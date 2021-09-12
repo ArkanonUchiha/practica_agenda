@@ -17,6 +17,9 @@ from django.contrib import admin
 from django.urls import include, path, re_path
 from django.views.generic.base import RedirectView
 
+from django.conf.urls.static import static
+from django.conf import settings
+
 favicon_view = RedirectView.as_view(url='/static/favicon.png', permanent=True)
 
 urlpatterns = [
@@ -24,3 +27,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('agenda.urls')),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
